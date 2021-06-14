@@ -26,10 +26,41 @@ const UserName = styled.span`
 `;
 
 export const NavAvatarWithUserName = () => {
-  const Greeting = () => {
-    const userData = { name: 'Jan '};
 
-    if (userData) {
+  // src/services/users
+  // export async const fetchUser = () => {
+  //   try {
+  //     const response = await fetch('https://foo.com/users');
+  //     const data = await response.json();
+
+  //     return data;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+
+  const Greeting = () => {
+    const userData = { name: 'Jan' }; // simulation
+
+    // Case 1
+    // import { fetchuser } from '../src/services/users
+    // const fetchUserMock = jest.spyOn(fetchUser)
+    // fetchUserMock.mockReturnValue({
+    //   name: 'Jan',
+    //   surname: 'Kowalski'
+    // })
+
+    // Case 2
+    // jest.mock('../src/services/users');
+    // const fetchUserMock = require('../src/services/users');
+    // fetchUserMock.mockImplementation(() => ({
+    //   name: 'Jan',
+    //   surname: 'Kowalski'
+    // }));
+
+    // const userData = await fetchUser();
+
+    if (userData.name) {
         return <UserName data-testid="avatar-username">{userData.name}</UserName>
     }
     return <UserName />
