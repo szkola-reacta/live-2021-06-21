@@ -1,13 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "styled-normalize";
-import { fontsLato } from "./Fonts";
+// import { fontsLato } from "./Fonts";
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
-  ${fontsLato}
   * { box-sizing: border-box; }
   body {
-    font-family: ${({ theme }) => theme.fonts.default};
     color: ${({ theme }) => theme.colors.text};
     background: ${({ theme }) => theme.colors.white};
   }

@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { useState, useEffect } from 'react';
 
+import { fetchUser } from './services/users';
 import iconAvatar from "./assets/icons/svg/icon-user.svg";
 
 const Avatar = styled.div`
@@ -27,6 +29,8 @@ const UserName = styled.span`
 
 export const NavAvatarWithUserName = () => {
 
+
+
   // src/services/users
   // export async const fetchUser = () => {
   //   try {
@@ -40,7 +44,18 @@ export const NavAvatarWithUserName = () => {
   // }
 
   const Greeting = () => {
-    const userData = { name: 'Jan' }; // simulation
+    const [user, setUser] = useState(null);
+
+    const fetchData = async () => {
+      const data = await fetchUser();
+      setUser(data);
+    }
+
+    useEffect(() => {
+      fetchData();
+    }, []);
+
+    // const userData = { name: 'Jan' }; // simulation
 
     // Case 1
     // import { fetchuser } from '../src/services/users
@@ -60,8 +75,8 @@ export const NavAvatarWithUserName = () => {
 
     // const userData = await fetchUser();
 
-    if (userData.name) {
-        return <UserName data-testid="avatar-username">{userData.name}</UserName>
+    if (user && user.name.first) {
+        return <UserName data-testid="avatar-username">{user.name.first}</UserName>
     }
     return <UserName />
   };
