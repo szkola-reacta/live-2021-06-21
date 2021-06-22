@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from 'react';
 
-import { fetchUser } from './services/users';
+import fetchUser from './services/users';
 import iconAvatar from "./assets/icons/svg/icon-user.svg";
 
 const Avatar = styled.div`
@@ -28,7 +28,6 @@ const UserName = styled.span`
 `;
 
 export const NavAvatarWithUserName = () => {
-
 
 
   // src/services/users
