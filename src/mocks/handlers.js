@@ -9,7 +9,7 @@ export const handlers = [
         results: [{
           id: 'f79e82e8-c34a-4dc7-a49e-9fadc0979fda',
           name: {
-            first: 'Jan',
+            first: 'Jan MSW',
             last: 'Maverick',
           }
         }]

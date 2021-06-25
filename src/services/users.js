@@ -11,8 +11,6 @@
 // }
 // export default fetchUser;
 
-
-
 const fetchUser = async () => {
   try {
     const response = await fetch('https://randomuser.me/api/');
